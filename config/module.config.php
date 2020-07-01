@@ -1,17 +1,22 @@
 <?php
-return array(
-    'doctrine' => array(
-        'driver' => array(
-            'zfcuser_entity' => array(
-                'class' => 'Doctrine\ORM\Mapping\Driver\XmlDriver',
-                'paths' => __DIR__ . '/xml/zfcuser'
-            ),
 
-            'orm_default' => array(
-                'drivers' => array(
-                    'ZfcUser\Entity'  => 'zfcuser_entity'
-                )
-            )
-        )
-    ),
-);
+declare(strict_types=1);
+
+use Doctrine\ORM\Mapping\Driver\XmlDriver;
+
+return [
+    'doctrine' => [
+        'driver' => [
+            'mvcuser_entity' => [
+                'class' => XmlDriver::class,
+                'paths' => __DIR__ . '/xml/mvcuser'
+            ],
+
+            'orm_default' => [
+                'drivers' => [
+                    'LaminasFriends\Mvc\User\Entity'  => 'mvcuser_entity'
+                ]
+            ]
+        ]
+    ],
+];
