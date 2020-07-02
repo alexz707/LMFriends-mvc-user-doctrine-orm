@@ -6,8 +6,10 @@ namespace LaminasFriends\Mvc\User\Doctrine\Orm;
 
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Mapping\Driver\XmlDriver;
-use LaminasFriends\Mvc\User\Doctrine\Orm\Options\ModuleOptions;
+use LaminasFriends\Mvc\User\Doctrine\Orm\Mapper\User;
+use LaminasFriends\Mvc\User\Doctrine\Orm\Options\ModuleOptions as OrmModuleOptions;
 use LaminasFriends\Mvc\User\Mapper\UserMapper;
+use LaminasFriends\Mvc\User\Options\ModuleOptions;
 
 class Module
 {
@@ -33,10 +35,10 @@ class Module
             'factories' => [
                 ModuleOptions::class => function ($sm) {
                     $config = $sm->get('Configuration');
-                    return new Options\ModuleOptions(isset($config['mvcuser']) ? $config['mvcuser'] : []);
+                    return new OrmModuleOptions(isset($config['mvcuser']) ? $config['mvcuser'] : []);
                 },
                 UserMapper::class => function ($sm) {
-                    return new Mapper\User(
+                    return new User(
                         $sm->get('mvcuser_doctrine_em'),
                         $sm->get(ModuleOptions::class)
                     );
