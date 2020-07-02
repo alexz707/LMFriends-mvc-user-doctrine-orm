@@ -26,7 +26,6 @@ class User extends MvcUserMapper
     {
         $this->em      = $em;
         $this->options = $options;
-        parent::__construct();
     }
 
     public function findByEmail(string $email)
