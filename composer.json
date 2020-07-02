@@ -7,27 +7,18 @@
         "laminas",
         "MvcUser"
     ],
-    "homepage": "https://github.com/ZF-Commons/ZfcUserDoctrineORM",
+    "homepage": "https://github.com/Laminas-Friends/LFUser",
     "authors": [
         {
-            "name": "Evan Coury",
-            "email": "me@evancoury.com",
-            "homepage": "http://blog.evan.pro/"
-        },
-        {
-            "name": "Kyle Spraggs",
-            "email": "theman@spiffyjr.me",
-            "homepage": "http://www.spiffyjr.me/"
-        },
-        {
-            "name": "Daniel Strøm",
-            "email": "danielss89@gmail.com"
+            "name": "Alex Zamponi",
+            "email": "no@spam.com",
+            "homepage": "http://wwww.spam.com/"
         }
     ],
     "require": {
         "php": ">=7.4",
-        "laminas-friends/laminasfriends-mvc-user": "~3.0.3",
-        "doctrine/doctrine-orm-module": "~1.0"
+        "laminas-friends/laminasfriends-mvc-user": "~3.0.4",
+        "doctrine/doctrine-orm-module": "~3.0.5"
     },
     "autoload": {
         "psr-4": {
